@@ -4,6 +4,9 @@ LABEL org.opencontainers.image.authors="shantanu"
 ENV PYTHONUNBUFFERED = 1
 
 COPY ./requirements.txt /requirements.txt
+
+# RUN apk add --update --no-cache python3-dev
+RUN apk add --update --no-cache mysql-client
 RUN pip install -r /requirements.txt
 
 RUN mkdir /app
