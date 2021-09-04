@@ -16,7 +16,7 @@ class CommandTests(TestCase):
     
 
     @patch('time.sleep',return_value=True)
-    def test_wait_for_db(self):
+    def test_wait_for_db(self, ts):
         """
             Test waiting for db
         """
