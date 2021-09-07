@@ -70,11 +70,12 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     """Model for recipe"""
-    title = models.CharField(max_length=255)
+    
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
+    title = models.CharField(max_length=255)
     time_minutes = models.IntegerField()
     price = models.DecimalField(max_digits=5, decimal_places=2)
     link = models.CharField(max_length=600, blank=True)
